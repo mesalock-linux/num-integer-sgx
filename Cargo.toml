@@ -16,12 +16,11 @@ exclude = ["/ci/*", "/.travis.yml", "/bors.toml", "/sgx/*"]
 [package.metadata.docs.rs]
 features = ["std"]
 
-[dependencies.num-traits]
-git = "https://github.com/mesalock-linux/num-traits-sgx"
+
 
 [dependencies]
 sgx_tstd = { rev = "v1.0.9", git = "https://github.com/baidu/rust-sgx-sdk.git", optional = true }
-
+num-traits = { git = "https://github.com/mesalock-linux/num-traits-sgx",branch = "v1.0.9-backup" }
 [features]
 default = ["std", "mesalock_sgx", "i128"]
 i128 = ["num-traits/i128"]
